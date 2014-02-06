@@ -9,5 +9,6 @@
     <string name="titleDialog">TITRE PUTE</string>
     <string name="progressText">TA CHATTE LA CONNASSE</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="ok">btn_editText</string>
 
 </resources>
