@@ -11,11 +11,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 /**
- * Created by Nicolas on 05/02/14.
+ * @author Nicolas
+ *         Date : 06/02/14 11:20
  */
-public class MainFragment extends Fragment
+public class TestFragment extends Fragment
 {
-
     private View view;
     private Activity activity;
 
@@ -24,17 +24,20 @@ public class MainFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         activity = super.getActivity(); //Permet de récupérer l'activité courrante
-        view = inflater.inflate(R.layout.fragment_main, container, false); //Recupère la vue courante
+        view = inflater.inflate(R.layout.fragment_test, container, false); //Recupère la vue courante
+        //String str = (String) activity.getIntent().getSerializableExtra("User");
+        // ((TextView) view.findViewById(R.id.str_hello)).setText(str);
+        view.findViewById(R.id.editText);
         Log.i("makemachine", "On Create View");
-        initButton();
+        // initButton();
         return view;
 
     }
 
     private void initButton()
     {
-        Button buttonBiatch = (Button) view.findViewById(R.id.btn_biatch);
-        buttonBiatch.setOnClickListener(new View.OnClickListener()
+        Button button = (Button) view.findViewById(R.id.btn_biatch);
+        button.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
@@ -48,20 +51,5 @@ public class MainFragment extends Fragment
 
             }
         });
-
-        Button buttonTest = (Button) view.findViewById(R.id.btn_test);
-        buttonTest.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                Intent intent = new Intent(activity, TestActivity.class);
-
-                activity.startActivity(intent);
-            }
-        });
-
     }
-
-
 }
